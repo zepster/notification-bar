@@ -12,8 +12,8 @@ export default class Button {
    * @param {object} options.config - button config
    * @param {string} options.config.buttonUrl - button Url
    * @param {string} options.config.openNewTab - Clicking button will open in new tab
-   * @param {string} options.config.wiggleButton - "on" - “Wiggle” button animation enabled (​https://daneden.github.io/animate.css/)​
-   * @param {string} options.config.buttonBackgroundColor - "on" - “Wiggle” button animation enabled (​https://daneden.github.io/animate.css/)​
+   * @param {boolean} options.config.wiggleButton - true - “Wiggle” button animation enabled (​https://daneden.github.io/animate.css/)​
+   * @param {boolean} options.config.buttonBackgroundColor - true - “Wiggle” button animation enabled (​https://daneden.github.io/animate.css/)​
    */
   constructor(options) {
     this.template = template;

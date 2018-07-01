@@ -9,8 +9,8 @@ new Line({
     allowHide: false,
     placement: "top",
     backgroundColor: "#FFFFFF",
-    brandingEnabled: "on",
-    animateEntryExit: "on",
+    brandingEnabled: true,
+    animateEntryExit: true,
   },
   Text: new Plain({
     config: {
@@ -21,8 +21,8 @@ new Line({
   SubmitButton: new Button({
     config: {
       buttonUrl: "https://example.com",
-      openNewTab: "on",
-      wiggleButton: 'on',
+      openNewTab: true,
+      wiggleButton: true,
       buttonBackgroundColor: '#AAACCC'
     },
     Text: new Plain({

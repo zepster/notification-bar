@@ -16,8 +16,8 @@ export default class Line {
    * @param {string} options.config.placement - Bar to show at the top or the bottom of the screen
    * @param {boolean} options.config.allowHide - Users can hide the notification bar by click the X button
    * @param {string} options.config.backgroundColor
-   * @param {string} options.config.brandingEnabled - Show ninjaconvert logo inside notification bar
-   * @param {string} options.config.animateEntryExit - (​https://daneden.github.io/animate.css/)​
+   * @param {boolean} options.config.brandingEnabled - Show ninjaconvert logo inside notification bar
+   * @param {boolean} options.config.animateEntryExit - (​https://daneden.github.io/animate.css/)​
    */
   constructor(options) {
     this.template = template;

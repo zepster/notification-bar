@@ -3,7 +3,7 @@ import './base.css';
 
 const PLACEHOLDERS = {
   Text: '{%TEXT%}',
-  Button: '{%Button%}',
+  Button: '{%BUTTON%}',
 };
 
 /**

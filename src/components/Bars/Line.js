@@ -6,11 +6,11 @@ import template from './line.html';
 import './line.css';
 
 const PLACEHOLDERS = {
-  Content: '{%Content%}',
+  Content: '{%CONTENT%}',
   BrandLogo: '{%BRAND_LOGO%}',
   backgroundColor: '{%BG_COLOR%}',
-  CloseButton: '{%CloseButton%}',
-  allowHide: '{%allowHide%}',
+  CloseButton: '{%CLOSE_BUTTON%}',
+  allowHide: '{%ALLOW_HIDE%}',
   brandingEnabled: '{%BRANDING_ENABLED%}',
 };
 

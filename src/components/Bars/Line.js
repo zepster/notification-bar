@@ -4,6 +4,7 @@ import './line.css';
 const PLACEHOLDERS = {
   Content: '{%Content%}',
   backgroundColor: '{%BG_COLOR%}',
+  CloseButton: '{%CloseButton%}',
 };
 
 /**
@@ -27,6 +28,7 @@ export default class Line {
   constructor(options) {
     this.placeholders = {
       [ PLACEHOLDERS.Content ]: options.Content,
+      [ PLACEHOLDERS.CloseButton ]: options.CloseButton,
       [ PLACEHOLDERS.backgroundColor ]: options.config.backgroundColor || "#fff",
     };
   }

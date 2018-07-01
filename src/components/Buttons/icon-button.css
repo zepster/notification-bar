@@ -1,0 +1,12 @@
+#hellobar .btn-close {
+  display: inline-block;
+  color: #ccc;
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+  opacity: .5;
+}
+
+#hellobar .btn-close:hover {
+  opacity: 1;
+}

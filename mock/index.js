@@ -1,0 +1,16 @@
+const serverResponse = {
+  sticky: false,
+  placement: "top", // bottom,
+  backgroundColor: "#FFFFFF",
+  mainText: "This is the main text area",
+  textColor: '#ccc',
+  allowHide: false,
+  buttonUrl: "http://google.com",
+  buttonText: "Click this button!",
+  openNewTab: true,
+  wiggleButton: true,
+  buttonTextColor: "#333",
+  buttonBackgroundColor: "#AAACCC",
+  brandingEnabled: true,
+  animateEntryExit: true,
+};

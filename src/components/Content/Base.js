@@ -1,23 +1,24 @@
-import template from './plain.html';
+import template from './base.html';
 
 const PLACEHOLDERS = {
-  text: '{%TEXT%}',
+  Text: '{%TEXT%}',
+  Button: '{%Button%}',
 };
 
 /**
  * Text
  */
-export default class Plain {
+export default class Base {
   /**
    * 
    * @param {object} options - list of options
-   * @param {object} options.config - Text config
-   * @param {string} options.config.text - Text
-   * @param {string} options.config.textColor - Text color
+   * @param {object} options.Text - Text component
+   * @param {object} options.Button - Button component
    */
   constructor(options) {
     this.placeholders = {
-      [ PLACEHOLDERS.text ] : options.config.text,
+      [ PLACEHOLDERS.Text ] : options.Text || '',
+      [ PLACEHOLDERS.Button ] : options.Button || '',
     };
   }
 

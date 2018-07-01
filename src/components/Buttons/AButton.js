@@ -1,10 +1,14 @@
-import template from './button.html';
+import template from './a-button.html';
+
+const PLACEHOLDERS = {
+  Text: '{%TEXT%}',
+};
 
 /**
  * Button
  * @property {string} template
  */
-export default class Button {
+export default class AButton {
   /**
    * 
    * @param {object} options - list of options
@@ -16,6 +20,23 @@ export default class Button {
    * @param {boolean} options.config.buttonBackgroundColor - true - “Wiggle” button animation enabled (​https://daneden.github.io/animate.css/)​
    */
   constructor(options) {
-    this.template = template;
+    this.placeholders = {
+      [ PLACEHOLDERS.Text ] : options.Text,
+    };
   }
+
+  /**
+   * @returns {string} string template
+   */
+  renderToString() {
+    return Object.keys(this.placeholders)
+      .reduce((template, placeholder) => {
+        return template.replace(placeholder, this.placeholders[placeholder]);
+      }, template);
+  }
+
+  toString() {
+    return this.renderToString();
+  }
+
 };

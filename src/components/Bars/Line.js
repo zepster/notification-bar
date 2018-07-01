@@ -1,6 +1,10 @@
 import template from './line.html';
 import './line.css';
 
+const PLACEHOLDERS = {
+  Content: '{%Content%}',
+};
+
 /**
  * Bar
  * @property {string} template
@@ -9,8 +13,7 @@ export default class Line {
   /**
    * 
    * @param {object} options - list of options
-   * @param {object} options.Text - Text component
-   * @param {object} options.SubmitButton - Button component
+   * @param {object} options.Content - Content component
    * @param {object} options.CloseButton - Button component
    * @param {object} options.config - bar config
    * @param {boolean} options.config.sticky - Does the bar stick to the top of the page
@@ -21,14 +24,19 @@ export default class Line {
    * @param {boolean} options.config.animateEntryExit - (​https://daneden.github.io/animate.css/)​
    */
   constructor(options) {
-    this.template = template;
+    this.placeholders = {
+      [ PLACEHOLDERS.Content ] : options.Content,
+    };
   }
 
   /**
    * @returns {string} string template
    */
   renderToString() {
-    return template;
+    return Object.keys(this.placeholders)
+      .reduce((template, placeholder) => {
+        return template.replace(placeholder, this.placeholders[placeholder]);
+      }, template);
   }
 
   toString() {

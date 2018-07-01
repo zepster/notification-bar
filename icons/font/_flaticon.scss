@@ -1,0 +1,71 @@
+    /*
+    Flaticon icon font: Flaticon
+    Creation date: 12/03/2018 19:52
+    */
+
+    @font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+    .fi:before{
+        display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    }
+
+    .flaticon-trash-container-side:before { content: "\f100"; }
+.flaticon-new-page-document:before { content: "\f101"; }
+.flaticon-stop:before { content: "\f102"; }
+.flaticon-music:before { content: "\f103"; }
+.flaticon-play:before { content: "\f104"; }
+.flaticon-plus-sign:before { content: "\f105"; }
+.flaticon-award-star:before { content: "\f106"; }
+.flaticon-user-group:before { content: "\f107"; }
+.flaticon-user:before { content: "\f108"; }
+.flaticon-right-arrow:before { content: "\f109"; }
+.flaticon-directional-arrow:before { content: "\f10a"; }
+.flaticon-arrow-pointing-left:before { content: "\f10b"; }
+.flaticon-checking:before { content: "\f10c"; }
+.flaticon-down-arrow:before { content: "\f10d"; }
+.flaticon-letter-x:before { content: "\f10e"; }
+.flaticon-gear-loading:before { content: "\f10f"; }
+    
+    $font-Flaticon-trash-container-side: "\f100";
+    $font-Flaticon-new-page-document: "\f101";
+    $font-Flaticon-stop: "\f102";
+    $font-Flaticon-music: "\f103";
+    $font-Flaticon-play: "\f104";
+    $font-Flaticon-plus-sign: "\f105";
+    $font-Flaticon-award-star: "\f106";
+    $font-Flaticon-user-group: "\f107";
+    $font-Flaticon-user: "\f108";
+    $font-Flaticon-right-arrow: "\f109";
+    $font-Flaticon-directional-arrow: "\f10a";
+    $font-Flaticon-arrow-pointing-left: "\f10b";
+    $font-Flaticon-checking: "\f10c";
+    $font-Flaticon-down-arrow: "\f10d";
+    $font-Flaticon-letter-x: "\f10e";
+    $font-Flaticon-gear-loading: "\f10f";

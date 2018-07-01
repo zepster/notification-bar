@@ -1,4 +1,5 @@
 import Icon from '../Icon';
+import { APP_NAME } from '@/src';
 
 import template from './icon-button.html';
 import './icon-button.css';
@@ -6,6 +7,7 @@ const closeSvg = require('@/icons/svg/015-letter-x.svg');
 
 const PLACEHOLDERS = {
   icon: '{%ICON%}',
+  AppName: '{%APP_NAME%}'
 };
 
 /**
@@ -22,7 +24,8 @@ export default class IconButton {
     this.placeholders = {
       [ PLACEHOLDERS.icon ]: new Icon({
         config: { Icon: closeSvg }
-      })
+      }),
+      [ PLACEHOLDERS.AppName ]: APP_NAME
     };
   }
 

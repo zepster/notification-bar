@@ -4,6 +4,10 @@ import IconButton from './components/Buttons/IconButton';
 import Plain from './components/Text/Plain';
 import BaseContent from './components/Content/Base';
 
+export const APP_NAME = 'NINJABAR';
+const ROOT_ELEMENT_ID = `bar-${new Date().getTime()}`;
+let element = null;
+
 const Bar = new Line({
   config: {
     sticky: true,
@@ -38,12 +42,24 @@ const Bar = new Line({
   CloseButton: new IconButton(),
 });
 
-function showNotificationBar() {
-  const wrapper = window.document.createElement('div');
-  wrapper.innerHTML = Bar;
-  window.document.body.appendChild(wrapper);
+export function show() {
+  if (element) {
+    close();
+  }
+  element = window.document.createElement('div');
+  element.setAttribute('id', ROOT_ELEMENT_ID);
+  element.innerHTML = Bar;
+  window.document.body.appendChild(element);
 };
 
-setTimeout(() => {
-  showNotificationBar()
-}, 0)
+export function close() {
+  if (element) {
+    window.document.body.removeChild(element);
+    element = null;
+  }
+}
+
+window[APP_NAME] = {
+  show,
+  close
+};

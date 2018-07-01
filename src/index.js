@@ -9,7 +9,7 @@ const Bar = new Line({
     sticky: true,
     allowHide: false,
     placement: "top",
-    backgroundColor: "#FFFFFF",
+    backgroundColor: '#CCC',
     brandingEnabled: true,
     animateEntryExit: true,
   },
@@ -44,6 +44,12 @@ const Bar = new Line({
   CloseButton: new IconButton(),
 });
 
-const wrapper = window.document.createElement('div');
-wrapper.innerHTML = Bar;
-window.document.body.appendChild(wrapper);
+function showNotificationBar() {
+  const wrapper = window.document.createElement('div');
+  wrapper.innerHTML = Bar;
+  window.document.body.appendChild(wrapper);
+};
+
+setTimeout(() => {
+  showNotificationBar()
+}, 0)

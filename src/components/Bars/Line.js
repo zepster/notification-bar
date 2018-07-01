@@ -3,6 +3,7 @@ import './line.css';
 
 const PLACEHOLDERS = {
   Content: '{%Content%}',
+  backgroundColor: '{%BG_COLOR%}',
 };
 
 /**
@@ -25,7 +26,8 @@ export default class Line {
    */
   constructor(options) {
     this.placeholders = {
-      [ PLACEHOLDERS.Content ] : options.Content,
+      [ PLACEHOLDERS.Content ]: options.Content,
+      [ PLACEHOLDERS.backgroundColor ]: options.config.backgroundColor || "#fff",
     };
   }
 

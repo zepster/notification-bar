@@ -17,3 +17,7 @@
   text-align: center;
   vertical-align: middle;
 }
+
+#hellobar .hellobar__close--hidden {
+  visibility: hidden;
+}

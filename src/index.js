@@ -7,9 +7,9 @@ import BaseContent from './components/Content/Base';
 const Bar = new Line({
   config: {
     sticky: true,
-    allowHide: false,
+    allowHide: true,
     placement: "top",
-    backgroundColor: '#CCC',
+    backgroundColor: '#FFF',
     brandingEnabled: true,
     animateEntryExit: true,
   },

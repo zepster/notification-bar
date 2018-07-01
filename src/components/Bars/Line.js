@@ -5,6 +5,7 @@ const PLACEHOLDERS = {
   Content: '{%Content%}',
   backgroundColor: '{%BG_COLOR%}',
   CloseButton: '{%CloseButton%}',
+  allowHide: '{%allowHide%}'
 };
 
 /**
@@ -30,6 +31,7 @@ export default class Line {
       [ PLACEHOLDERS.Content ]: options.Content,
       [ PLACEHOLDERS.CloseButton ]: options.CloseButton,
       [ PLACEHOLDERS.backgroundColor ]: options.config.backgroundColor || "#fff",
+      [ PLACEHOLDERS.allowHide ]: options.config.allowHide ? '' : 'hellobar__close--hidden'
     };
   }
 

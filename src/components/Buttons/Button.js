@@ -1,4 +1,4 @@
-import template from './line.html';
+import template from './button.html';
 
 /**
  * Button

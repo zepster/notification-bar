@@ -1,4 +1,5 @@
 import template from './base.html';
+import './base.css';
 
 const PLACEHOLDERS = {
   Text: '{%TEXT%}',

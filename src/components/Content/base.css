@@ -1,0 +1,7 @@
+#hellobar .content {
+
+}
+
+#hellobar .content--text, #hellobar .content--button {
+  display: inline-block;
+}

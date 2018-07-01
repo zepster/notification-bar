@@ -1,7 +1,12 @@
 #hellobar .content {
+  line-height: 1.3
+}
 
+#hellobar .content--text {
+  margin-right: 0.67em;
 }
 
 #hellobar .content--text, #hellobar .content--button {
   display: inline-block;
+  vertical-align: middle;
 }

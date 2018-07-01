@@ -16,8 +16,8 @@ const Bar = new Line({
   Content: new BaseContent({
     Text: new Plain({
       config: {
-        text: 'mainText',
-        textColor: '#111111',
+        text: 'Announce A Sale Or Discount With A Hello Bar Like This. Grab Your FREE Account Today',
+        textColor: '#eb5424',
       }
     }),
     Button: new Button({
@@ -25,12 +25,12 @@ const Bar = new Line({
         buttonUrl: "https://example.com",
         openNewTab: true,
         wiggleButton: true,
-        buttonBackgroundColor: '#AAACCC'
+        buttonBackgroundColor: '#eb5424'
       },
       Text: new Plain({
         config: {
-          text: 'buttonText',
-          textColor: '#333333',
+          text: 'Get Started',
+          textColor: '#fff',
         }
       }),
     })

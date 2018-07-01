@@ -1,7 +1,9 @@
 import template from './a-button.html';
+import './a-button.css';
 
 const PLACEHOLDERS = {
   Text: '{%TEXT%}',
+  buttonBackgroundColor: '{%BG_COLOR%}',
 };
 
 /**
@@ -22,6 +24,7 @@ export default class AButton {
   constructor(options) {
     this.placeholders = {
       [ PLACEHOLDERS.Text ] : options.Text,
+      [ PLACEHOLDERS.buttonBackgroundColor ] : options.config.buttonBackgroundColor,
     };
   }
 

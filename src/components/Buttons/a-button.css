@@ -1,0 +1,17 @@
+#hellobar .cta {
+  color: #fff; 
+  border: 0px solid #ffffff;
+  border-radius: 0px;
+  display: inline-block;
+  padding: 0px;
+  opacity: 1;
+  cursor: pointer;
+  max-width: 22.5em;
+  white-space: nowrap;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+#hellobar .cta .cta--text-holder {
+  padding: 5px 15px;
+}

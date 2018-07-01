@@ -2,6 +2,7 @@ import template from './plain.html';
 
 const PLACEHOLDERS = {
   text: '{%TEXT%}',
+  textColor: '{%TEXT_COLOR%}',
 };
 
 /**
@@ -18,6 +19,7 @@ export default class Plain {
   constructor(options) {
     this.placeholders = {
       [ PLACEHOLDERS.text ] : options.config.text,
+      [ PLACEHOLDERS.textColor ] : options.config.textColor || 'black',
     };
   }
 

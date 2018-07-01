@@ -5,10 +5,15 @@
   display: table;
   font-size: 17px;
   font-weight: 400;
-  border: 1px solid #ccc;
+}
+
+#hellobar p {
+  padding: 0px;
+  margin: 0px;
 }
 
 .hellobar__content-wrapper {
   display: table-cell;
   text-align: center;
+  vertical-align: middle;
 }

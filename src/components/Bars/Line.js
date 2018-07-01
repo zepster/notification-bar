@@ -1,4 +1,5 @@
 import template from './line.html';
+import './line.css';
 
 /**
  * Bar
@@ -21,5 +22,16 @@ export default class Line {
    */
   constructor(options) {
     this.template = template;
+  }
+
+  /**
+   * @returns {string} string template
+   */
+  renderToString() {
+    return template;
+  }
+
+  toString() {
+    return this.renderToString();
   }
 };

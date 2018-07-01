@@ -3,7 +3,7 @@ import Button from './components/Buttons/Button';
 import IconButton from './components/Buttons/IconButton';
 import Plain from './components/Text/Plain';
 
-new Line({
+const Bar = new Line({
   config: {
     sticky: true,
     allowHide: false,
@@ -32,3 +32,7 @@ new Line({
   }),
   CloseButton: new IconButton(),
 });
+
+const wrapper = window.document.createElement('div');
+wrapper.innerHTML = Bar;
+window.document.body.appendChild(wrapper);

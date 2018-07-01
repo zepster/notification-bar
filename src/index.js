@@ -35,12 +35,6 @@ const Bar = new Line({
       }),
     })
   }),
-  Text: new Plain({
-    config: {
-      text: 'mainText',
-      textColor: '#111111',
-    }
-  }),
   CloseButton: new IconButton(),
 });
 

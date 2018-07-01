@@ -5,6 +5,8 @@
   display: table;
   font-size: 17px;
   font-weight: 400;
+  padding: 0.33em 0.5em;
+  box-sizing: border-box;
 }
 
 #hellobar p {
@@ -20,4 +22,15 @@
 
 #hellobar .hellobar__close--hidden {
   visibility: hidden;
+}
+
+#hellobar .hellobar__brang-logo--hidden {
+  visibility: hidden;
+}
+
+#hellobar .hellobar__brang-logo {
+  cursor: pointer;
+  display: table-cell;
+  width: 20px;
+  vertical-align: middle;
 }

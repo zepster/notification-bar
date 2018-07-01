@@ -1,28 +1,22 @@
-import Icon from '../Icon';
-
-import template from './icon-button.html';
-import './icon-button.css';
-const closeSvg = require('@/icons/svg/015-letter-x.svg');
+import template from './icon.html';
 
 const PLACEHOLDERS = {
-  icon: '{%ICON%}',
+  Icon: '{%ICON%}',
 };
 
 /**
- * Button
- * the X button
+ * Text
  */
-export default class IconButton {
+export default class Plain {
   /**
    * 
    * @param {object} options - list of options
-   * @param {string} options - icon (probably)
+   * @param {object} options.config - Text config
+   * @param {string} options.config.Icon - Icon component
    */
   constructor(options) {
     this.placeholders = {
-      [ PLACEHOLDERS.icon ]: new Icon({
-        config: { Icon: closeSvg }
-      })
+      [ PLACEHOLDERS.Icon ] : options.config.Icon || '',
     };
   }
 
@@ -39,4 +33,5 @@ export default class IconButton {
   toString() {
     return this.renderToString();
   }
+
 };

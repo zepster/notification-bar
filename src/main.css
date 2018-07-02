@@ -15,5 +15,6 @@
 }
 
 #ninjabar-wrapper.bottom {
+  position: fixed;
   bottom: 0px;
 }

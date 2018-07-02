@@ -44,17 +44,11 @@ function createBar(config) {
   });
 };
 
-export function show(Bar) {
+export function show(Bar, wrapperConfig) {
   if (element) {
     close();
   }
-  element = createWrapper({
-    id: ROOT_ELEMENT_ID,
-    sticky: true,
-    placement: 'top',
-    animateEntryExit: false,
-
-  });
+  element = createWrapper(wrapperConfig);
   element.innerHTML = Bar;
   window.document.body.appendChild(element);
 };
@@ -68,7 +62,12 @@ export function close() {
 
 loadConfig().then((config) => {
   const Bar = createBar(config);
-  show(Bar);
+  show(Bar, {
+    id: ROOT_ELEMENT_ID,
+    sticky: config.sticky,
+    placement: config.placement,
+    animateEntryExit: config.animateEntryExit,
+  });
 });
 
 window[APP_NAME] = {

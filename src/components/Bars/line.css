@@ -20,6 +20,10 @@
   vertical-align: middle;
 }
 
+#hellobar .hellobar__close {
+  text-align: right;
+}
+
 #hellobar .hellobar__close--hidden {
   visibility: hidden;
 }

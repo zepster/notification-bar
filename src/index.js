@@ -50,7 +50,7 @@ export function show() {
   }
   element = window.document.createElement('div');
   element.setAttribute('id', ROOT_ELEMENT_ID);
-  element.className = 'sticky';
+  element.className = 'sticky top';
   element.innerHTML = Bar;
   window.document.body.appendChild(element);
 };

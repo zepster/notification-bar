@@ -1,9 +1,16 @@
 #ninjabar-wrapper {
   width: 100%;
-  top: 0px;
   position: absolute;
 }
 
 #ninjabar-wrapper.sticky {
   position: fixed;
+}
+
+#ninjabar-wrapper.top {
+  top: 0px;
+}
+
+#ninjabar-wrapper.bottom {
+  bottom: 0px;
 }

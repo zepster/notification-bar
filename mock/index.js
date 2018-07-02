@@ -1,5 +1,5 @@
 export const serverResponse = {
-  sticky: false,
+  sticky: true,
   placement: "top", // bottom,
   backgroundColor: "#FFFFFF",
   mainText: "This is the main text area",

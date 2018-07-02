@@ -6,6 +6,7 @@ const PLACEHOLDERS = {
   buttonBackgroundColor: '{%BG_COLOR%}',
   buttonUrl: '{%BUTTON_URL%}',
   openNewTab: '{%OPEN_NEW_TAB%}',
+  wiggleButton: '{%ANIMATION%}',
 };
 
 /**
@@ -29,6 +30,7 @@ export default class AButton {
       [ PLACEHOLDERS.buttonBackgroundColor ] : options.config.buttonBackgroundColor,
       [ PLACEHOLDERS.buttonUrl ] : options.config.buttonUrl,
       [ PLACEHOLDERS.openNewTab ] : options.config.openNewTab ? '_blank' : '',
+      [ PLACEHOLDERS.wiggleButton ] : options.config.wiggleButton ? 'wobble' : '',
     };
   }
 

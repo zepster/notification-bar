@@ -57,8 +57,8 @@ export function show() {
 
 export function close() {
   if (element) {
-    element.classList.remove("fadeInDown");
-    element.classList.add("fadeOutUp");
+    element.className = element.className.replace('fadeInDown', '');
+    element.className = `${element.className} fadeOutUp`;
     setTimeout(() => {
       window.document.body.removeChild(element);
       element = null;

@@ -3,6 +3,7 @@ import Button from './components/Buttons/AButton';
 import IconButton from './components/Buttons/IconButton';
 import Plain from './components/Text/Plain';
 import BaseContent from './components/Content/Base';
+import { createWrapper, destroy } from './wrapper';
 
 import './main.css';
 
@@ -12,12 +13,9 @@ let element = null;
 
 const Bar = new Line({
   config: {
-    sticky: false,
     allowHide: true,
-    placement: "top",
     backgroundColor: '#FFF',
     brandingEnabled: true,
-    animateEntryExit: true,
   },
   Content: new BaseContent({
     Text: new Plain({
@@ -48,25 +46,22 @@ export function show() {
   if (element) {
     close();
   }
-  element = window.document.createElement('div');
-  element.setAttribute('id', ROOT_ELEMENT_ID);
-  element.className = 'sticky top fadeInDown';
+  element = createWrapper({
+    id: ROOT_ELEMENT_ID,
+    sticky: true,
+    placement: 'top',
+    animateEntryExit: false,
+
+  });
   element.innerHTML = Bar;
   window.document.body.appendChild(element);
 };
 
 export function close() {
   if (element) {
-    element.className = element.className.replace('fadeInDown', '');
-    element.className = `${element.className} fadeOutUp`;
-    setTimeout(() => {
-      window.document.body.removeChild(element);
-      element = null;
-    }, 100);
+    destroy(element).then(() => element = null);
   }
 }
-
-show();
 
 window[APP_NAME] = {
   show,

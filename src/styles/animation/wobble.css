@@ -26,4 +26,5 @@
 
 .wobble {
   animation: wobble 5s infinite ease-in-out;
+  animation-delay: 2s;
 }

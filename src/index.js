@@ -50,15 +50,19 @@ export function show() {
   }
   element = window.document.createElement('div');
   element.setAttribute('id', ROOT_ELEMENT_ID);
-  element.className = 'sticky top';
+  element.className = 'sticky top fadeInDown';
   element.innerHTML = Bar;
   window.document.body.appendChild(element);
 };
 
 export function close() {
   if (element) {
-    window.document.body.removeChild(element);
-    element = null;
+    element.classList.remove("fadeInDown");
+    element.classList.add("fadeOutUp");
+    setTimeout(() => {
+      window.document.body.removeChild(element);
+      element = null;
+    }, 100);
   }
 }
 

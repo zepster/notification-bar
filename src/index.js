@@ -4,13 +4,15 @@ import IconButton from './components/Buttons/IconButton';
 import Plain from './components/Text/Plain';
 import BaseContent from './components/Content/Base';
 
+import './main.css';
+
 export const APP_NAME = 'NINJABAR';
-const ROOT_ELEMENT_ID = `bar-${new Date().getTime()}`;
+const ROOT_ELEMENT_ID = `ninjabar-wrapper`;
 let element = null;
 
 const Bar = new Line({
   config: {
-    sticky: true,
+    sticky: false,
     allowHide: true,
     placement: "top",
     backgroundColor: '#FFF',
@@ -48,6 +50,7 @@ export function show() {
   }
   element = window.document.createElement('div');
   element.setAttribute('id', ROOT_ELEMENT_ID);
+  element.className = 'sticky';
   element.innerHTML = Bar;
   window.document.body.appendChild(element);
 };
@@ -58,6 +61,8 @@ export function close() {
     element = null;
   }
 }
+
+show();
 
 window[APP_NAME] = {
   show,

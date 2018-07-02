@@ -1,10 +1,10 @@
-const serverResponse = {
+export const serverResponse = {
   sticky: false,
   placement: "top", // bottom,
   backgroundColor: "#FFFFFF",
   mainText: "This is the main text area",
   textColor: '#ccc',
-  allowHide: false,
+  allowHide: true,
   buttonUrl: "http://google.com",
   buttonText: "Click this button!",
   openNewTab: true,

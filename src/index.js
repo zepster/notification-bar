@@ -4,45 +4,47 @@ import IconButton from './components/Buttons/IconButton';
 import Plain from './components/Text/Plain';
 import BaseContent from './components/Content/Base';
 import { createWrapper, destroy } from './wrapper';
-
+import { loadConfig } from './api';
 import './main.css';
 
 export const APP_NAME = 'NINJABAR';
 const ROOT_ELEMENT_ID = `ninjabar-wrapper`;
 let element = null;
 
-const Bar = new Line({
-  config: {
-    allowHide: true,
-    backgroundColor: '#FFF',
-    brandingEnabled: true,
-  },
-  Content: new BaseContent({
-    Text: new Plain({
-      config: {
-        text: 'Announce A Sale Or Discount With A Hello Bar Like This. Grab Your FREE Account Today',
-        textColor: '#eb5424',
-      }
-    }),
-    Button: new Button({
-      config: {
-        buttonUrl: "https://example.com",
-        openNewTab: true,
-        wiggleButton: true,
-        buttonBackgroundColor: '#eb5424'
-      },
+function createBar(config) {
+  return new Line({
+    config: {
+      allowHide: config.allowHide,
+      backgroundColor: config.backgroundColor,
+      brandingEnabled: config.brandingEnabled,
+    },
+    Content: new BaseContent({
       Text: new Plain({
         config: {
-          text: 'Get Started',
-          textColor: '#fff',
+          text: config.mainText,
+          textColor: config.textColor,
         }
       }),
-    })
-  }),
-  CloseButton: new IconButton(),
-});
+      Button: new Button({
+        config: {
+          buttonUrl: config.buttonUrl,
+          openNewTab: config.openNewTab,
+          wiggleButton: config.wiggleButton,
+          buttonBackgroundColor: config.buttonBackgroundColor
+        },
+        Text: new Plain({
+          config: {
+            text: config.buttonText,
+            textColor: config.buttonTextColor,
+          }
+        }),
+      })
+    }),
+    CloseButton: new IconButton(),
+  });
+};
 
-export function show() {
+export function show(Bar) {
   if (element) {
     close();
   }
@@ -62,6 +64,12 @@ export function close() {
     destroy(element).then(() => element = null);
   }
 }
+
+
+loadConfig().then((config) => {
+  const Bar = createBar(config);
+  show(Bar);
+});
 
 window[APP_NAME] = {
   show,

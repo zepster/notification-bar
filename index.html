@@ -9,6 +9,14 @@
       </style>
     <meta charset="UTF-8">
     <title>Webpack App</title>
+    <script>
+        window.addEventListener('NINJABAR.init', () => {
+          NINJABAR.load('token')
+            .then(() => {
+              console.log('config loaded');
+            })
+        })
+      </script>
   </head>
   <body>
     <p>Test text1</p>
@@ -33,4 +41,5 @@
     <p>Test text</p>
     <p>Test text</p>
     </body>
+
 </html>

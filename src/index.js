@@ -59,18 +59,37 @@ export function close() {
   }
 }
 
+/**
+ * App was init
+ */
+function appInitTrigger() {
+  window.dispatchEvent(new Event(`${APP_NAME}.init`))
+};
 
-loadConfig().then((config) => {
-  const Bar = createBar(config);
-  show(Bar, {
-    id: ROOT_ELEMENT_ID,
-    sticky: config.sticky,
-    placement: config.placement,
-    animateEntryExit: config.animateEntryExit,
+/**
+ * 
+ * @param {string} token api token
+ * @param {boolean} showAfterLoad show bar after
+ */
+function load(token, showAfterLoad = true) {
+  return loadConfig(token).then((config) => {
+    const Bar = createBar(config);
+    if (showAfterLoad) {
+      show(Bar, {
+        id: ROOT_ELEMENT_ID,
+        sticky: config.sticky,
+        placement: config.placement,
+        animateEntryExit: config.animateEntryExit,
+      });
+    }
+    return Promise.resolve();
   });
-});
+};
 
 window[APP_NAME] = {
   show,
-  close
+  close,
+  load,
 };
+
+appInitTrigger();

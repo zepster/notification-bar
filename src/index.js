@@ -1,62 +1,12 @@
-import Line from './components/Bars/Line';
-import Button from './components/Buttons/AButton';
-import IconButton from './components/Buttons/IconButton';
-import Plain from './components/Text/Plain';
-import BaseContent from './components/Content/Base';
-import { createWrapper, destroy } from './wrapper';
 import { loadConfig } from './api';
+import { APP_NAME } from './constants';
+import { makeBar } from './componentFactory';
 import './main.css';
 
-export const APP_NAME = 'NINJABAR';
-const ROOT_ELEMENT_ID = `ninjabar-wrapper`;
-let element = null;
+const elements = {};
 
-function createBar(config) {
-  return new Line({
-    config: {
-      allowHide: config.allowHide,
-      backgroundColor: config.backgroundColor,
-      brandingEnabled: config.brandingEnabled,
-    },
-    Content: new BaseContent({
-      Text: new Plain({
-        config: {
-          text: config.mainText,
-          textColor: config.textColor,
-        }
-      }),
-      Button: new Button({
-        config: {
-          buttonUrl: config.buttonUrl,
-          openNewTab: config.openNewTab,
-          wiggleButton: config.wiggleButton,
-          buttonBackgroundColor: config.buttonBackgroundColor
-        },
-        Text: new Plain({
-          config: {
-            text: config.buttonText,
-            textColor: config.buttonTextColor,
-          }
-        }),
-      })
-    }),
-    CloseButton: new IconButton(),
-  });
-};
-
-export function show(Bar, wrapperConfig) {
-  if (element) {
-    close();
-  }
-  element = createWrapper(wrapperConfig);
-  element.innerHTML = Bar;
-  window.document.body.appendChild(element);
-};
-
-export function close() {
-  if (element) {
-    destroy(element).then(() => element = null);
-  }
+export function closeBar(id) {
+  elements[id] && elements[id].destroy();
 }
 
 /**
@@ -71,25 +21,20 @@ function appInitTrigger() {
  * @param {string} token api token
  * @param {boolean} showAfterLoad show bar after
  */
-function load(token, showAfterLoad = true) {
+function load(token) {
   return loadConfig(token).then((config) => {
-    const Bar = createBar(config);
-    if (showAfterLoad) {
-      show(Bar, {
-        id: ROOT_ELEMENT_ID,
-        sticky: config.sticky,
-        placement: config.placement,
-        animateEntryExit: config.animateEntryExit,
-      });
+    for (let i = 0; i < config.length; i += 1) {
+      elements[i] = makeBar(config[i], i);
+      elements[i].show();
     }
     return Promise.resolve();
   });
 };
 
 window[APP_NAME] = {
-  show,
-  close,
+  closeBar,
   load,
+  elements
 };
 
 appInitTrigger();

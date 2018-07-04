@@ -1,3 +1,4 @@
+const WRAPPER_CLASS = 'ninjabar-wrapper';
 const STICKY_CLASS = 'sticky';
 const PLACEMENT_TOP_CLASS = 'top';
 const PLACEMENT_BOTTOM_CLASS = 'bottom';
@@ -14,7 +15,7 @@ const EXIT_ANIMATION_CLASS = 'fadeOutUp';
  */
 export function createWrapper(config) {
   const element = window.document.createElement('div');
-  let classes = '';
+  let classes = WRAPPER_CLASS;
   element.setAttribute('id', config.id);
   if (config.sticky) {
     classes += ` ${STICKY_CLASS} `;

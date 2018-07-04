@@ -1,21 +1,21 @@
 @import "./styles/animation/wobble.css";
 @import "./styles/animation/fade.css";
 
-#ninjabar-wrapper {
+.ninjabar-wrapper {
   width: 100%;
   position: absolute;
 }
 
-#ninjabar-wrapper.sticky {
+.ninjabar-wrapper.sticky {
   position: fixed;
 }
 
-#ninjabar-wrapper.top {
+.ninjabar-wrapper.top {
   top: 0px;
   left: 0px;
 }
 
-#ninjabar-wrapper.bottom {
+.ninjabar-wrapper.bottom {
   position: fixed;
   bottom: 0px;
 }

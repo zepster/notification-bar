@@ -13,4 +13,5 @@ export const serverResponse = {
   buttonBackgroundColor: "#AAACCC",
   brandingEnabled: true,
   animateEntryExit: true,
+  type: 'notification',
 };

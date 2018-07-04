@@ -23,4 +23,22 @@ how use
     s.src = "http://127.0.0.1:8080/main.js";
     window.document.head.append(s);
 ```
+
+example: ./index.html
+
+ - add script tag
     
+    ```<script async type="text/javascript" src="main.js"></script>```
+
+- add handler
+
+    ``` 
+        //event
+        window.addEventListener('NINJABAR.init', () => {
+          // load config and show bar panels  
+          NINJABAR.load('token')
+            .then(() => {
+              console.log('config loaded');
+            })
+        })
+    ```

@@ -42,3 +42,14 @@ example: ./index.html
             })
         })
     ```
+
+## new bar
+- create new Bar
+    
+    Describe new bar: ```src/components/Bars/<newBar.js>```
+
+    Create new template: ```src/components/Bars/<newBar.html>```
+
+    Add config rules for new bar: ```src/components/Bars/factory.js```
+- probably new bars will required custom wrappers ??
+- add make bar function: ```src/componentFactory.js```
